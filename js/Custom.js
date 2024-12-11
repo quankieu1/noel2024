@@ -15,8 +15,18 @@ function loadingVisible() {
         'overflow': 'visible',
         'height': '100%'
     });
-    sound.play();
+    // sound.play();
 }
+
+let hasPlayed = false; // Cờ để kiểm tra xem âm thanh đã được phát chưa
+
+document.addEventListener('click', function () {
+    if (!hasPlayed) { // Chỉ phát âm thanh nếu chưa phát lần nào
+        sound.play();
+        hasPlayed = true; // Đặt cờ thành true để chặn các lần phát sau
+    }
+});
+
 
 /* Scroll Title Begin */
 var scrl = "Giáng sinh vui vẻ! ";
