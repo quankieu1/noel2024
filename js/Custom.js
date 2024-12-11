@@ -1,5 +1,5 @@
 var sound = new Howl({
-    urls: ['https://github.com/quankieu1/noel2024/tree/main/song/backgroundonline-audio-converter.com_out.mp3'],
+    urls: ['song/backgroundonline-audio-converter.com_out.mp3?v=1'],
     loop: true
 });
 
