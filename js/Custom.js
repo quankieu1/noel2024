@@ -1,7 +1,7 @@
 var sound = new Howl({
-    urls: ['song/background.mp3'],
+    urls: ['song/backgroundonline-audio-converter.com_out.mp3'],
     loop: true
-  });
+});
 
 function loading() {
     $('body').css('height', $(window).height());
@@ -32,17 +32,14 @@ function scrlsts() {
 var leftToRight = true;
 var endPos = 0;
 var size = 0;
-function showSantaClaus()
-{
-    if (leftToRight == true)
-    {
+function showSantaClaus() {
+    if (leftToRight == true) {
         leftToRight = false;
         endPos = $(window).width();
         $("img#santaClaus").attr("src", "imgs/santaclaus.gif");
         $("img#santaClaus").css("left", "-390px");
     }
-    else
-    {
+    else {
         leftToRight = true;
         endPos = -390;
         $("img#santaClaus").attr("src", "imgs/santaclausreverse.gif");
@@ -152,7 +149,7 @@ function loop() {
         var particle = particles[i];
         particle.updatePhysics();
 
-        with(particle.position) {
+        with (particle.position) {
             if (y < -1000) y += 2000;
             if (x > 1000) x -= 2000;
             else if (x < -1000) x += 2000;
@@ -170,34 +167,33 @@ function loop() {
 /* Snow End */
 
 var bShowLetter = false;
-$(document).ready(function() {
+$(document).ready(function () {
     scrlsts();
     snowEffectBind();
     showSantaClaus();
 
     // Bắt sự kiện nhấn tuần lộc
-    $("#reindeer").click(function() {
+    $("#reindeer").click(function () {
         // Chưa mở thư
-        if (bShowLetter == false)
-        {
+        if (bShowLetter == false) {
             $('#reindeer').animate({
                 right: -122
-            }, 1000, function() {
-                
-                $("#letter").show("drop", {direction: "down"}, "fast");
+            }, 1000, function () {
+
+                $("#letter").show("drop", { direction: "down" }, "fast");
 
                 $("img#reindeer").attr("src", "imgs/reindeerhide.png");
-                
+
                 $('#reindeer').animate({
                     right: 0
-                }, 1000, function() {
-                    
+                }, 1000, function () {
+
                     $(".message").typed({
                         strings: [
-                        "<<< Merry Christmas >>>",
-                        "Giáng sinh vui vẻ nha Duyên ưiiii!!!, Chúc bạn có một mùa noel thật ấm áp nhaaaa.",
-                        "It’s Christmas time! May love, success, luck and friendship come knocking at your door throughout this Christmas season. Have a wonderful Christmas.",
-                        "圣诞将至祝福到：健康给你送拥抱；成功为你开大道；甜蜜生活对你笑；平安对你更关照；幸福光环围你绕。提前祝你：平安夜吉祥，圣诞节快乐！",
+                            "<<< Merry Christmas >>>",
+                            "Giáng sinh vui vẻ nha Duyên ưiiii!!!, Chúc bạn có một mùa noel thật ấm áp nhaaaa.",
+                            "It’s Christmas time! May love, success, luck and friendship come knocking at your door throughout this Christmas season. Have a wonderful Christmas.",
+                            "圣诞将至祝福到：健康给你送拥抱；成功为你开大道；甜蜜生活对你笑；平安对你更关照；幸福光环围你绕。提前祝你：平安夜吉祥，圣诞节快乐！",
                         ],
                         typeSpeed: 150,
                         startDelay: 500,
@@ -214,16 +210,15 @@ $(document).ready(function() {
 
             bShowLetter = true;
         }
-        else
-        {
+        else {
             $('#reindeer').animate({
                 right: -122
-            }, 1000, function() {
-                
-                $("#letter").hide("drop", {direction: "down"}, "slow");
-                
+            }, 1000, function () {
+
+                $("#letter").hide("drop", { direction: "down" }, "slow");
+
                 $("img#reindeer").attr("src", "imgs/reindeer.png");
-                
+
                 $('#reindeer').animate({
                     right: 0
                 }, 1000);
